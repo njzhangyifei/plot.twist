@@ -46,14 +46,14 @@ module.exports = function(io){
                 // reset stopwatch
                 stopwatch.reset();
 
-                setInterval(function() {
-                    var t = stopwatch.elapsed();
-                    var messagePacked = {
-                        timestamp: t,
-                        data: [Math.sin(t/1000), Math.cos(t/1000)]
-                    }
-                    socket.emit('incomingData', messagePacked);
-                }, 30)
+                // setInterval(function() {
+                    // var t = stopwatch.elapsed();
+                    // var messagePacked = {
+                        // timestamp: t,
+                        // data: [Math.sin(t/1000), Math.cos(t/1000)]
+                    // }
+                    // socket.emit('incomingData', messagePacked);
+                // }, 30)
 
                 device.on('data', function(data) {
                     if (data) {
