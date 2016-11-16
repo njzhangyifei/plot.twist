@@ -1,0 +1,30 @@
+extends layout
+block head-vars
+    - var title='Plot.Twist'
+    - var description='Plot everything from serial'
+
+    script(src='bundle.js')
+
+block content
+    div.ui.container(style='height:100%; width:100%; text-align:center')
+        div(style='height:120px')
+            h1.ui.center.aligned.header(style='padding-top:1.2rem') Plot.
+                i Twist
+            div.ui.selection.dropdown#dropdown-serialport
+                input#dropdown-serialport-selection
+                div.default.text
+                    i#dropdown-serialport-icon.icon.plug
+                    span#dropdown-serialport-text Ports
+                div.menu#dropdown-serialport-option
+                    div.item COMx-1
+                    div.item COMx-2
+            span.ui(style='width:5px;display:inline-block')
+            div.ui.labeled.button
+                div.ui.blue.button#button-dataset-download Download Dataset
+                span.ui.basic.label
+                    | Count &nbsp;
+                    span#label-dataset-count 42
+            div.ui.red.button#button-dataset-clear Clear Dataset
+        div(style='height:calc(100% - (120px)); width:100%; text-align:center')
+            div#chartContainer(style='height:95%; width:90%; display:inline-block')
+
