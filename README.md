@@ -11,9 +11,10 @@ Yet another minimalistic timeseries charting tool
 - Easy-customizable parser
 
 ## Setup
-1. run `npm install` and build semantic js
-2. change the `config.js` file for a different baudrate/parity/parser
-3. `npm start` to start the server
+1. run `npm install`
+2. in `semantic` direcotry run `gulp build` to build the semantic-ui library
+3. change the `config.js` file for a different baudrate/parity/parser
+4. `npm start` to start the server
 
 ## Configuration File
 - `config.parser` corresponds to the

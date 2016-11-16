@@ -3,7 +3,7 @@ require('../semantic/dist/semantic.min.css');
 require('../public/javascripts/canvasjs/canvasjs.min.js')
 var $ = require('jquery');
 var socket_io = require('socket.io-client');
-var socket = socket_io('http://localhost:8080');
+var socket = socket_io.connect();
 
 var chart;
 
@@ -205,7 +205,6 @@ socket.on('incomingData', function(message) {
 });
 
 $(window).resize(function(){
-    console.log("resize")
     if (chart) {
         setTimeout( function() {
             chart = null;

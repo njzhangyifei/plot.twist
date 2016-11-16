@@ -11,10 +11,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var io = require('socket.io')(8080)
-var index = require('./routes/index')(io);
-
 var app = express();
+var server = require('http').Server(app);
+var io = require('socket.io')(server)
+var index = require('./routes/index')(io);
 
 // attach to the compiler & the server
 app.use(webpackDevMiddleware(compiler, {
@@ -59,4 +59,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+module.exports = {app:app, server:server};
